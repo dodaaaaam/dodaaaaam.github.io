@@ -1,0 +1,166 @@
+/* 전체 기본 */
+body {
+    margin: 0;
+    font-family: 'Pretendard', sans-serif;
+    background-color: #fafafa;
+    color: #222;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+/* ========================= */
+/* About Section */
+/* ========================= */
+
+.intro-container {
+    display: flex;
+    align-items: stretch; 
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 120px;
+}
+
+.intro-text-container {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-text-title {
+    font-size: 60px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.intro-text-subtitle {
+    font-size: 28px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.intro-text-description {
+    font-size: 42px;
+    color: #505fb1;
+    margin-bottom: 16px;
+}
+
+.intro-image-container {
+    flex: 0.5;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.intro-image-circle {
+    width: 320px;
+    aspect-ratio: 1 / 1;
+    background-color: #ffffff;
+    max-width: 320px;
+    border-radius: 50%;
+    border: 3px solid #767eaa;
+    box-shadow: #e0e0e0 0px 4px 20px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-image {
+    width: 310px;
+    aspect-ratio: 1 / 1;
+    max-width: 310px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-infos{
+    list-style: none;
+    display: flex;
+    gap: 64px;
+    margin: 0;
+}
+
+.contact-info-item {
+    font-size: 14px;
+    font-weight: 300px;
+    color: #757575;
+}
+
+/* ========================= */
+/* AboutMe Section */
+/* ========================= */
+
+
+/* ========================= */
+/* Stack Section */
+/* ========================= */
+
+.stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.stack-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* 한 줄 (2개 카드) */
+.stack-subcontainer {
+    display: flex;
+    gap: 40px;
+}
+
+/* 카드 */
+.stack-list {
+    flex: 1;
+    background: #fff;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* 제목 */
+.stack-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* 태그 컨테이너 */
+.stack-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 태그 스타일 */
+.stack-item {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 999px;
+    background-color: #f1f3f5;
+    color: #333;
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+/* hover 살짝 */
+.stack-item:hover {
+    background-color: #007EFF;
+    color: #fff;
+}
