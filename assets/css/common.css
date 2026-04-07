@@ -12,6 +12,7 @@
     --color-text-muted: #757575;
     --color-text-light: #888;
     --color-text-faint: #aaa;
+    --color-text-white: #fff;
 
     /* 배경 */
     --color-bg: #f6f4f1;
@@ -20,10 +21,12 @@
     --color-bg-tag: #f1f3f5;
     --color-bg-blockquote: #faf9f7;
     --color-bg-inline-code: #f4f4f4;
+    --color-bg-tooltip: #E4DED6;
 
     /* 보더 */
     --color-border: #e0e0e0;
     --color-border-light: #eee;
+    --color-border-dark: #D1CBC3;
 
     /* 기타 */
     --color-nav-link: rgb(114, 114, 114);
@@ -38,6 +41,13 @@
 /* ========================= */
 /* Font                      */
 /* ========================= */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('/assets/fonts/MemomentKkukkukk.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'Pretendard';
     src: url('/assets/fonts/MemomentKkukkukk.woff2') format('woff2');

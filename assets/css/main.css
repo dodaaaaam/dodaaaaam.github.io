@@ -5,7 +5,6 @@
 .intro-container {
     display: flex;
     flex-direction: column;
-    padding-top: 100px;
 }
 
 .profile-container {
@@ -112,6 +111,7 @@
 }
 
 .stack-item {
+    position: relative;
     padding: 8px 18px;
     font-size: 16px;
     font-weight: 500;
@@ -119,13 +119,62 @@
     border-radius: 999px;
     background-color: var(--color-bg-white);
     color: var(--color-text-secondary);
-    cursor: pointer;
+    cursor: default;
     transition: all 0.2s ease;
 }
 
-.stack-item:hover {
-    border-color: var(--color-text-muted);
-    color: var(--color-text-muted);
+.stack-item[data-tooltip] {
+    cursor: pointer;
+}
+
+.stack-item[data-tooltip]:hover {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: var(--color-bg-white);
+}
+
+/* 툴팁 말풍선 */
+.stack-item[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 12px);
+    width: max-content;
+    max-width: 360px;
+    padding: 10px 16px;
+    background-color: var(--color-bg-tooltip);
+    color: var(--color-text-primary);
+    font-size: 15px;
+    font-weight: 100;
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: start;
+    white-space: normal;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+/* 말풍선 삼각형 */
+.stack-item[data-tooltip]::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: calc(100% - 1px);
+    border: 8px solid transparent;
+    border-bottom-color: var(--color-bg-tooltip);
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.stack-item[data-tooltip]:hover::after,
+.stack-item[data-tooltip]:hover::before {
+    opacity: 1;
 }
 
 /* ========================= */
