@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/blog.css">
+    <div id="header"></div>
+
+    <main>
+        <h2 class="title">Blogs</h2>
+        <!-- 카테고리 선택 및 검색 영역 -->
+        <section class="blog-filter-container">
+            <div class="category-filter">
+                <button class="category-button active" data-category="all">All</button>
+                <button class="category-button" data-category="Frontend">Frontend</button>
+                <button class="category-button" data-category="Backend">Backend</button>
+                <button class="category-button" data-category="Trouble Shooting">Trouble Shooting</button>
+                <button class="category-button" data-category="CS">CS</button>
+                <button class="category-button" data-category="AI">AI</button>
+                <button class="category-button" data-category="Dev Log">Dev Log</button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="검색어를 입력하세요.">
+                <button id="search-button">
+                    <img src="/assets/img/search.svg" alt="검색" class="search-icon">
+                </button>
+            </div>
+
+        </section>
+
+        <!-- 블로그 카드 영역 -->
+        <section class="blog-card-container">
+
+        </section>      
+    </main>
+    <script src="/assets/js/common.js"></script>
+</body>
+
+</html>

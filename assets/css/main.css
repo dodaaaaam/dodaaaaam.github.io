@@ -1,146 +1,111 @@
-/* 전체 기본 */
-body {
-    margin: 0;
-    font-family: 'Pretendard', sans-serif;
-    background-color: #fafafa;
-    color: #222;
-}
-
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 0;
-}
-
 /* ========================= */
 /* About Section */
 /* ========================= */
 
 .intro-container {
     display: flex;
-    align-items: stretch; 
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 120px;
+    flex-direction: column;
 }
 
-.intro-text-container {
-    flex: 1.5;
+.profile-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.intro-text-title {
-    font-size: 60px;
-    margin: 0;
-    font-weight: 700;
-}
-
-.intro-text-subtitle {
-    font-size: 28px;
+.profile-subtitle {
+    font-size: 36px;
     margin: 0;
     font-weight: 500;
 }
 
-.intro-text-description {
+.profile-description-color {
     font-size: 42px;
-    color: #505fb1;
-    margin-bottom: 16px;
+    color: #3c3327;
+    margin: 0;
+    text-align: center;
 }
 
-.intro-image-container {
-    flex: 0.5;
-    display: flex;
-    align-items: center;    
-    justify-content: center;
-    padding: 0 50px;
-}
-
-.intro-image-circle {
-    width: 320px;
-    aspect-ratio: 1 / 1;
-    background-color: #ffffff;
-    max-width: 320px;
-    border-radius: 50%;
-    border: 3px solid #767eaa;
-    box-shadow: #e0e0e0 0px 4px 20px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.intro-image {
-    width: 310px;
-    aspect-ratio: 1 / 1;
-    max-width: 310px;
-    border-radius: 50%;
-    object-fit: cover;
+.profile-description-black {
+    font-size: 42px;
+    margin: 0;
+    text-align: center;
 }
 
 .contact-infos{
     list-style: none;
     display: flex;
-    gap: 64px;
+    gap: 56px;
+    margin: 24px 0 0 0;
+    padding: 0;
+}
+
+.contact-info-item-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-info-item-text {
+    font-size: 16px;
+    font-weight: 300px;
+    color: #757575;
     margin: 0;
 }
 
-.contact-info-item {
-    font-size: 14px;
-    font-weight: 300px;
+.contact-info-item-icon {
+    width: 24px;
+    height: 24px;
     color: #757575;
 }
 
-/* ========================= */
-/* AboutMe Section */
-/* ========================= */
-
+.aboutme-description {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #555;
+    text-align: center;
+    margin-top: 24px;
+}
 
 /* ========================= */
 /* Stack Section */
 /* ========================= */
 
 .stack-container {
-    display: flex;
+    display: grid;
     flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
     gap: 40px;
+}
+
+.stack-subcontainer {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 16px;
+    align-items: center;
 }
 
 .stack-title {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+    padding-left: 16px;
+}
+
+.stack-title-text {
     font-size: 24px;
-    font-weight: 700;
-}
-
-/* 한 줄 (2개 카드) */
-.stack-subcontainer {
-    display: flex;
-    gap: 40px;
-}
-
-/* 카드 */
-.stack-list {
-    flex: 1;
-    background: #fff;
-    padding: 28px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-
-    display: flex;
-    flex-direction: column;
-}
-
-/* 제목 */
-.stack-subtitle {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 16px;
+    font-weight: 500;
+    text-align: center;
 }
 
 /* 태그 컨테이너 */
 .stack-items {
     display: flex;
     flex-wrap: wrap;
+    justify-content: start;
     gap: 10px;
     list-style: none;
     padding: 0;
@@ -149,18 +114,151 @@ main {
 
 /* 태그 스타일 */
 .stack-item {
-    padding: 6px 14px;
-    font-size: 13px;
-    border-radius: 999px;
-    background-color: #f1f3f5;
-    color: #333;
+    padding: 8px 18px;
+    font-size: 16px;
     font-weight: 500;
-
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
-/* hover 살짝 */
 .stack-item:hover {
-    background-color: #007EFF;
-    color: #fff;
+    border-color: #757575;
+    color: #757575;
+}
+
+/* ========================= */
+/* Experience Section        */
+/* ========================= */
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* 타임라인 */
+.timeline {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #3c3327;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 30px;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* 오른쪽 배치 */
+.timeline-item.right {
+    margin-left: 50%;
+}
+
+/* 왼쪽 배치 */
+.timeline-item.left {
+    margin-left: 0;
+    text-align: right;
+}
+
+/* 점 */
+.timeline-dot {
+    position: absolute;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #3c3327;
+    border: 3px solid #f6f4f1;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-item.right .timeline-dot {
+    left: -10px;
+}
+
+.timeline-item.left .timeline-dot {
+    right: -10px;
+}
+
+/* 텍스트 */
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 4px;
+}
+
+.timeline-period {
+    font-size: 13px;
+    color: #888;
+    font-weight: 500;
+}
+
+.timeline-title-wrapper {
+    display: flex;
+    gap: 12px; 
+    align-items: end;
+}
+
+.timeline-title-wrapper.right {
+    justify-content: start;
+}
+
+.timeline-title-wrapper.left {
+    justify-content: end;
+}
+
+.timeline-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.timeline-desc {
+    font-size: 15px;
+    color: #555;
+    margin: 0;
+}
+
+.timeline-content-container {
+    display: flex;
+    gap: 50px;
+    align-items: start;
+}
+
+.timeline-content-container.right {
+    justify-content: start;
+}
+
+.timeline-content-container.left {
+    justify-content: end;
+}
+
+.timeline-content-image {
+    width: 320px;
+    height: 240px;
+    border-radius: 8px;
+    object-fit: cover;
+    background-color: #e0e0e0;
 }
