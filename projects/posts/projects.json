@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "finders",
+    "title": "Finders",
+    "summary": "분실물 찾기 플랫폼",
+    "description": "분실물 등록 및 습득물 매칭 서비스로, 위치 기반 검색과 알림 기능을 제공합니다.",
+    "period": "2025.09 ~ 2025.12",
+    "tags": ["React", "Spring Boot", "MySQL", "AWS EC2"],
+    "thumbnail": "/projects/images/finders.jpg",
+    "link": "/projects/pages/project.html?slug=finders"
+  },
+  {
+    "slug": "cookmate",
+    "title": "CookMate",
+    "summary": "AI 기반 요리 도우미",
+    "description": "냉장고 재료를 입력하면 AI가 레시피를 추천해주는 서비스입니다. STT/TTS 기능으로 음성 기반 조리 가이드를 제공합니다.",
+    "period": "2025.03 ~ 2025.06",
+    "tags": ["React", "Zustand", "Tailwind CSS", "Azure Speech API"],
+    "thumbnail": "/projects/images/cookmate.jpg",
+    "link": "/projects/pages/project.html?slug=cookmate"
+  },
+  {
+    "slug": "oops",
+    "title": "OOPS!",
+    "summary": "실시간 일정 공유 앱",
+    "description": "팀원 간 실시간 일정 공유 및 투표 기능을 제공하는 협업 도구입니다.",
+    "period": "2025.09 ~ 2025.12",
+    "tags": ["React", "React Query", "WebSocket", "Spring Boot"],
+    "thumbnail": "/projects/images/oops.jpg",
+    "link": "/projects/pages/project.html?slug=oops"
+  },
+  {
+    "slug": "soulmate",
+    "title": "SoulMate",
+    "summary": "MBTI 기반 매칭 서비스",
+    "description": "MBTI 성격 유형을 기반으로 궁합이 맞는 사람을 매칭해주는 소셜 서비스입니다.",
+    "period": "2026.01 ~ 2026.02",
+    "tags": ["React", "Tailwind CSS", "GitHub Actions", "Vercel"],
+    "thumbnail": "/projects/images/soulmate.jpg",
+    "link": "/projects/pages/project.html?slug=soulmate"
+  }
+]

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <main>
+        <div class="project-detail">
+            <a href="/projects/projects.html" class="project-detail-back">&larr; 프로젝트 목록</a>
+            <div class="project-detail-header">
+                <span class="project-detail-period"></span>
+                <h1 class="project-detail-title"></h1>
+                <p class="project-detail-summary"></p>
+                <div class="project-detail-tags"></div>
+            </div>
+            <hr class="project-detail-divider">
+            <div class="project-detail-body"></div>
+        </div>
+    </main>
+
+    <script src="/assets/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        const slug = new URLSearchParams(window.location.search).get('slug');
+
+        marked.setOptions({
+            highlight: function (code, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(code, { language: lang }).value;
+                }
+                return hljs.highlightAuto(code).value;
+            }
+        });
+
+        // 메타데이터 로드
+        fetch('/projects/posts/projects.json')
+            .then(res => res.json())
+            .then(projects => {
+                const project = projects.find(p => p.slug === slug);
+                if (!project) {
+                    document.querySelector('.project-detail-body').innerHTML = '<p>프로젝트를 찾을 수 없습니다.</p>';
+                    return;
+                }
+                document.querySelector('.project-detail-title').textContent = project.title;
+                document.querySelector('.project-detail-period').textContent = project.period;
+                document.querySelector('.project-detail-summary').textContent = project.summary + ' — ' + project.description;
+                document.querySelector('.project-detail-tags').innerHTML =
+                    project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
+            });
+
+        // 마크다운 로드
+        fetch(`/projects/posts/${slug}.md`)
+            .then(res => {
+                if (!res.ok) throw new Error('Not found');
+                return res.text();
+            })
+            .then(md => {
+                document.querySelector('.project-detail-body').innerHTML = marked.parse(md);
+                hljs.highlightAll();
+            })
+            .catch(() => {
+                document.querySelector('.project-detail-body').innerHTML = '<p>프로젝트 내용을 불러올 수 없습니다.</p>';
+            });
+    </script>
+</body>
+
+</html>

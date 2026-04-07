@@ -1,0 +1,223 @@
+/* ========================= */
+/* Project Card Section      */
+/* ========================= */
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 20px 0 80px;
+}
+
+.project-card {
+    display: flex;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.project-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+    background-color: var(--color-bg-white);
+}
+
+.project-card-period {
+    font-size: 13px;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.project-card-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.project-card-summary {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-brand);
+    margin: 0;
+}
+
+.project-card-description {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.project-card-tag {
+    padding: 4px 12px;
+    font-size: 13px;
+    border-radius: 999px;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.project-card-thumbnail {
+    width: 400px;
+    height: 400px;
+    flex-shrink: 0;
+    object-fit: cover;
+    background-color: var(--color-border);
+}
+
+/* ========================= */
+/* Project Detail Page       */
+/* ========================= */
+
+.project-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+}
+
+.project-detail-back {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: color 0.2s ease;
+}
+
+.project-detail-back:hover {
+    color: var(--color-text-primary);
+}
+
+.project-detail-header {
+    margin-bottom: 32px;
+}
+
+.project-detail-period {
+    font-size: 13px;
+    color: var(--color-text-light);
+    font-weight: 500;
+}
+
+.project-detail-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 8px 0 12px;
+}
+
+.project-detail-summary {
+    font-size: 18px;
+    color: var(--color-brand);
+    margin: 0 0 16px;
+}
+
+.project-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.project-detail-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: 32px;
+}
+
+/* 마크다운 본문 — 블로그와 동일 구조 */
+.project-detail-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+}
+
+.project-detail-body h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 48px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.project-detail-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 36px 0 12px;
+}
+
+.project-detail-body p {
+    margin: 0 0 16px;
+}
+
+.project-detail-body ul, .project-detail-body ol {
+    margin: 0 0 16px;
+    padding-left: 24px;
+}
+
+.project-detail-body li {
+    margin-bottom: 6px;
+}
+
+.project-detail-body code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    background-color: var(--color-bg-inline-code);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.project-detail-body pre {
+    background-color: var(--color-bg-code);
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin: 0 0 24px;
+}
+
+.project-detail-body pre code {
+    background: none;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-detail-body blockquote {
+    border-left: 4px solid var(--color-brand);
+    margin: 0 0 16px;
+    padding: 12px 20px;
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-blockquote);
+    border-radius: 0 8px 8px 0;
+}
+
+.project-detail-body img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.project-detail-body strong {
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
