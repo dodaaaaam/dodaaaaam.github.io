@@ -1,4 +1,43 @@
-/* 전체 기본 */
+/* ========================= */
+/* Color Variables            */
+/* ========================= */
+:root {
+    /* 브랜드 */
+    --color-brand: #3c3327;
+    --color-accent: #505fb1;
+
+    /* 텍스트 */
+    --color-text-primary: #1d1d1f;
+    --color-text-secondary: #555;
+    --color-text-muted: #757575;
+    --color-text-light: #888;
+    --color-text-faint: #aaa;
+
+    /* 배경 */
+    --color-bg: #f6f4f1;
+    --color-bg-white: #fff;
+    --color-bg-code: #f6f8fa;
+    --color-bg-tag: #f1f3f5;
+    --color-bg-blockquote: #faf9f7;
+    --color-bg-inline-code: #f4f4f4;
+
+    /* 보더 */
+    --color-border: #e0e0e0;
+    --color-border-light: #eee;
+
+    /* 기타 */
+    --color-nav-link: rgb(114, 114, 114);
+    --color-nav-link-active: #1f1f1f;
+    --color-black: #000;
+
+    /* 그림자 */
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================= */
+/* Font                      */
+/* ========================= */
 @font-face {
     font-family: 'Pretendard';
     src: url('/assets/fonts/MemomentKkukkukk.woff2') format('woff2');
@@ -13,6 +52,9 @@
     font-style: normal;
 }
 
+/* ========================= */
+/* Reset & Base              */
+/* ========================= */
 html {
     height: 100%;
     overflow-y: scroll;
@@ -20,32 +62,26 @@ html {
     scroll-behavior: smooth;
 }
 
-.title {
-    font-size: 44px;
-    font-weight: 700;
-    margin: 0;
-}
-
 body {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Pretendard', sans-serif;
     font-size: 16px;
     line-height: 1.7;
     letter-spacing: -0.2px;
-    color: #1d1d1f;
+    color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #f6f4f1;
+    background-color: var(--color-bg);
     background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(80,95,177,0.08)'%3E%3Ccircle cx='10' cy='12' r='1.2'/%3E%3Ccircle cx='30' cy='25' r='0.8'/%3E%3Ccircle cx='60' cy='10' r='1'/%3E%3Ccircle cx='50' cy='40' r='1.3'/%3E%3Ccircle cx='15' cy='55' r='0.7'/%3E%3Ccircle cx='70' cy='60' r='1.1'/%3E%3Ccircle cx='35' cy='70' r='0.9'/%3E%3Ccircle cx='55' cy='75' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* ========================= */
+/* Layout                    */
+/* ========================= */
 main {
     max-width: 1400px;
-    margin: 185px auto 0;
+    margin: 100px auto 0;
     padding: 0;
 }
 
@@ -53,12 +89,36 @@ main {
     padding: 0 0 120px 0;
 }
 
+/* 공통 섹션 타이틀 */
+.title {
+    font-size: 44px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ========================= */
+/* Scroll Animation          */
+/* ========================= */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/* Navbar                    */
+/* ========================= */
 .navbar {
     width: 100%;
-    background-color: #f6f4f1;
+    background-color: var(--color-bg);
     background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgba(80,95,177,0.08)'%3E%3Ccircle cx='10' cy='12' r='1.2'/%3E%3Ccircle cx='30' cy='25' r='0.8'/%3E%3Ccircle cx='60' cy='10' r='1'/%3E%3Ccircle cx='50' cy='40' r='1.3'/%3E%3Ccircle cx='15' cy='55' r='0.7'/%3E%3Ccircle cx='70' cy='60' r='1.1'/%3E%3Ccircle cx='35' cy='70' r='0.9'/%3E%3Ccircle cx='55' cy='75' r='0.6'/%3E%3C/g%3E%3C/svg%3E");
     padding: 24px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--color-border);
     position: fixed;
     top: 0;
     left: 0;
@@ -77,14 +137,14 @@ main {
     display: flex;
     align-items: start;
     gap: 8px;
-    color: #3c3327;
+    color: var(--color-brand);
 }
 
 .logo {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-    color: #3c3327;
+    color: var(--color-brand);
 }
 
 .nav-menu {
@@ -96,7 +156,7 @@ main {
 }
 
 .nav-menu a {
-    color: rgb(114, 114, 114);
+    color: var(--color-nav-link);
     text-decoration: none;
     font-size: 16px;
     font-weight: 400;
@@ -105,7 +165,7 @@ main {
 .nav-menu a:hover,
 .nav-menu a:focus,
 .nav-menu a.active {
-    color: #1f1f1f;
+    color: var(--color-nav-link-active);
     font-weight: 500;
 }
 
@@ -120,11 +180,11 @@ main {
     width: 36px;
     height: 36px;
     display: block;
-    fill: rgb(114, 114, 114);
+    fill: var(--color-nav-link);
     transition: fill 0.2s ease, transform 0.2s ease;
 }
 
 .contact-item:hover {
-    fill: #000000;
+    fill: var(--color-black);
     transform: scale(1.03);
 }
