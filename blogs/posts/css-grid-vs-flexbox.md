@@ -1,11 +1,3 @@
----
-title: "CSS Grid vs Flexbox, 언제 무엇을 써야 할까"
-category: Frontend
-date: 2026-04-07
----
-
-# CSS Grid vs Flexbox, 언제 무엇을 써야 할까
-
 ## 서론
 
 CSS 레이아웃을 다루다 보면 반드시 마주치는 두 가지 도구가 있다. 바로 **Flexbox**와 **CSS Grid**다.

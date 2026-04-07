@@ -21,14 +21,16 @@ fetch('/components/header.html')
     });
   });
 
-// 스크롤 등장 애니메이션
+// 스크롤 등장/퇴장 애니메이션
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
   observer.observe(el);

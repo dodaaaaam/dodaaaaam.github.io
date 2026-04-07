@@ -96,7 +96,7 @@ main {
 }
 
 .block {
-    padding: 0 0 120px 0;
+    padding: 60px 0 60px 0;
 }
 
 /* 공통 섹션 타이틀 */
@@ -111,8 +111,9 @@ main {
 /* ========================= */
 .animate-on-scroll {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(100px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .animate-on-scroll.visible {
@@ -168,7 +169,7 @@ main {
 .nav-menu a {
     color: var(--color-nav-link);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
 }
 

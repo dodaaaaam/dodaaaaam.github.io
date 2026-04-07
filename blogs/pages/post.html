@@ -10,16 +10,29 @@
 <body>
     <div id="header"></div>
 
-    <main>
-        <article class="post-container">
-            <a href="/blogs/pages/blogs.html" class="post-back">&larr; 목록으로</a>
-            <div class="post-meta">
-                <span class="post-category"></span>
-                <span class="post-date"></span>
+    <main class="post-main">
+        <aside class="post-sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">카테고리</h3>
+                <ul class="sidebar-categories"></ul>
             </div>
-            <h1 class="post-title"></h1>
-            <div class="post-tags"></div>
-            <hr class="post-divider">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">최신 글</h3>
+                <ul class="sidebar-recent"></ul>
+            </div>
+        </aside>
+        <article class="post-container">
+            <div class="post-header-container">
+                <div class="post-title-container">
+                    <div class="post-meta">
+                        <span class="post-category"></span>
+                        <span class="post-date"></span>
+                    </div>
+                    <h1 class="post-title"></h1>
+                    <div class="post-tags"></div>
+                </div>
+                <a href="/blogs/pages/blogs.html" class="post-back">&larr; 목록으로</a>
+            </div>
             <div class="post-body"></div>
         </article>
     </main>
@@ -53,6 +66,20 @@
                 document.querySelector('.post-date').textContent = post.date;
                 document.querySelector('.post-tags').innerHTML =
                     post.tags.map(t => `<span class="blog-card-tag">${t}</span>`).join('');
+
+                // 사이드바: 카테고리 목록
+                const categories = [...new Set(posts.map(p => p.category))];
+                document.querySelector('.sidebar-categories').innerHTML = categories
+                    .map(cat => `<li><a class="sidebar-link" href="/blogs/pages/blogs.html?category=${encodeURIComponent(cat)}">${cat}</a></li>`)
+                    .join('');
+
+                // 사이드바: 최신 글 5개
+                const recent = [...posts]
+                    .sort((a, b) => new Date(b.date) - new Date(a.date))
+                    .slice(0, 5);
+                document.querySelector('.sidebar-recent').innerHTML = recent
+                    .map(p => `<li><a class="sidebar-link ${p.slug === slug ? 'active' : ''}" href="/blogs/pages/post.html?slug=${p.slug}">${p.title}</a><span class="sidebar-date">${p.date}</span></li>`)
+                    .join('');
             });
 
         // 마크다운 로드

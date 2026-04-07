@@ -5,6 +5,7 @@
 .intro-container {
     display: flex;
     flex-direction: column;
+    padding: 320px 0;
 }
 
 .profile-container {
@@ -77,6 +78,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
+    padding-bottom: 200px;
 }
 
 .stack-subcontainer {
