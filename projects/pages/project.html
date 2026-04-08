@@ -10,16 +10,24 @@
 <body>
     <div id="header"></div>
 
-    <main>
-        <div class="project-detail">
-            <a href="/projects/projects.html" class="project-detail-back">&larr; 프로젝트 목록</a>
-            <div class="project-detail-header">
-                <span class="project-detail-period"></span>
-                <h1 class="project-detail-title"></h1>
-                <p class="project-detail-summary"></p>
-                <div class="project-detail-tags"></div>
+    <main class="project-main">
+        <aside class="project-sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">프로젝트</h3>
+                <ul class="sidebar-projects"></ul>
             </div>
-            <hr class="project-detail-divider">
+        </aside>
+
+        <div class="project-detail">
+            <div class="project-header-container">
+                <div class="project-detail-header">
+                    <span class="project-detail-period"></span>
+                    <h1 class="project-detail-title"></h1>
+                    <p class="project-detail-summary"></p>
+                    <div class="project-detail-tags"></div>
+                </div>
+            <a href="/projects/projects.html" class="project-detail-back">&larr; 프로젝트 목록</a>
+            </div>
             <div class="project-detail-body"></div>
         </div>
     </main>
@@ -53,6 +61,11 @@
                 document.querySelector('.project-detail-summary').textContent = project.summary + ' — ' + project.description;
                 document.querySelector('.project-detail-tags').innerHTML =
                     project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
+
+                // 사이드바: 프로젝트 목록
+                document.querySelector('.sidebar-projects').innerHTML = projects
+                    .map(p => `<li><a class="sidebar-link ${p.slug === slug ? 'active' : ''}" href="/projects/pages/project.html?slug=${p.slug}">${p.title}</a></li>`)
+                    .join('');
             });
 
         // 마크다운 로드

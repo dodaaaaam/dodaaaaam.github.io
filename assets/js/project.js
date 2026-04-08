@@ -4,6 +4,7 @@ if (document.querySelector('.projects-container')) {
   function createProjectCard(project) {
     return `
       <div class="project-card" data-link="${project.link}">
+        <img class="project-card-thumbnail" src="${project.thumbnail}" alt="${project.title}" onerror="this.style.background='var(--color-border)'">
         <div class="project-card-info">
           <span class="project-card-period">${project.period}</span>
           <h3 class="project-card-title">${project.title}</h3>
@@ -13,7 +14,6 @@ if (document.querySelector('.projects-container')) {
             ${project.tags.map(tag => `<span class="project-card-tag">${tag}</span>`).join('')}
           </div>
         </div>
-        <img class="project-card-thumbnail" src="${project.thumbnail}" alt="${project.title}" onerror="this.style.background='var(--color-border)'">
       </div>
     `;
   }
