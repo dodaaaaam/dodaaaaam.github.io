@@ -17,26 +17,35 @@
                 <li><a href="/projects/projects.html">Projects</a></li>
             </ul>
 
-            <!-- contact 메뉴 -->
-            <ul class="contact-menu">
-                <li>
-                    <a href="https://github.com/dodaaaaam" target="_blank">
-                        <svg class="contact-item" width="45" height="45" viewBox="2 2 41 41" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M22.5 3.75C20.0377 3.75 17.5995 4.23498 15.3247 5.17726C13.0498 6.11953 10.9828 7.50065 9.24175 9.24175C5.72544 12.7581 3.75 17.5272 3.75 22.5C3.75 30.7875 9.13125 37.8187 16.575 40.3125C17.5125 40.4625 17.8125 39.8812 17.8125 39.375V36.2062C12.6188 37.3312 11.5125 33.6937 11.5125 33.6937C10.65 31.5187 9.43125 30.9375 9.43125 30.9375C7.725 29.775 9.5625 29.8125 9.5625 29.8125C11.4375 29.9437 12.4313 31.7437 12.4313 31.7437C14.0625 34.5937 16.8187 33.75 17.8875 33.3C18.0562 32.0812 18.5438 31.2562 19.0688 30.7875C14.9063 30.3187 10.5375 28.7062 10.5375 21.5625C10.5375 19.4812 11.25 17.8125 12.4688 16.4812C12.2813 16.0125 11.625 14.0625 12.6562 11.5312C12.6562 11.5312 14.2313 11.025 17.8125 13.4437C19.2938 13.0312 20.9062 12.825 22.5 12.825C24.0938 12.825 25.7062 13.0312 27.1875 13.4437C30.7687 11.025 32.3438 11.5312 32.3438 11.5312C33.375 14.0625 32.7188 16.0125 32.5313 16.4812C33.75 17.8125 34.4625 19.4812 34.4625 21.5625C34.4625 28.725 30.075 30.3 25.8938 30.7687C26.5688 31.35 27.1875 32.4937 27.1875 34.2375V39.375C27.1875 39.8812 27.4875 40.4812 28.4438 40.3125C35.8875 37.8 41.25 30.7875 41.25 22.5C41.25 20.0377 40.765 17.5995 39.8227 15.3247C38.8805 13.0498 37.4994 10.9828 35.7583 9.24175C34.0172 7.50065 31.9502 6.11953 29.6753 5.17726C27.4005 4.23498 24.9623 3.75 22.5 3.75Z" />
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:rin4219@naver.com">
-                        <svg class="contact-item" width="45" height="45" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M14.608 12.172C14.608 13.012 14.847 13.347 15.472 13.347C16.865 13.347 17.752 11.572 17.752 8.62C17.752 4.108 14.464 1.948 10.359 1.948C6.136 1.948 2.295 4.78 2.295 10.132C2.295 15.244 5.655 18.028 10.815 18.028C12.567 18.028 13.743 17.836 15.542 17.236L15.928 18.843C14.152 19.42 12.254 19.587 10.791 19.587C4.023 19.587 0.398003 15.867 0.398003 10.131C0.398003 4.347 4.599 0.410999 10.383 0.410999C16.407 0.410999 19.598 4.011 19.598 8.427C19.598 12.171 18.423 15.027 14.727 15.027C13.046 15.027 11.943 14.355 11.799 12.866C11.367 14.522 10.215 15.027 8.654 15.027C6.566 15.027 4.814 13.418 4.814 10.179C4.814 6.915 6.351 4.899 9.111 4.899C10.575 4.899 11.487 5.475 11.893 6.387L12.59 5.115H14.606V12.172H14.608ZM11.657 9.004C11.657 7.685 10.672 7.132 9.856 7.132C8.968 7.132 7.985 7.851 7.985 9.964C7.985 11.644 8.729 12.58 9.856 12.58C10.648 12.58 11.657 12.076 11.657 10.684V9.004Z"/>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+            <!-- contact -->
+            <button class="contact_btn" onclick="document.getElementById('contact-modal').classList.add('active')">Contact</button>
         </div>
     </nav>
 </header>
+
+<!-- Contact 팝업 -->
+<div id="contact-modal" class="contact-modal" onclick="if(event.target===this) this.classList.remove('active')">
+    <div class="contact-modal-content">
+        <button class="contact-modal-close" onclick="document.getElementById('contact-modal').classList.remove('active')">&times;</button>
+        <h3 class="contact-modal-title">Contact</h3>
+        <div class="contact-modal-links">
+            <a href="mailto:rin4219@naver.com" class="contact-modal-circle" title="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a href="mailto:rin4219@naver.com" class="contact-modal-circle" title="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <a href="https://github.com/dodaaaaam" target="_blank" class="contact-modal-circle" title="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.865 20.166 8.839 21.489C9.339 21.581 9.521 21.272 9.521 21.007V19.217C6.73 19.826 6.14 17.965 6.14 17.965C5.68 16.812 5.03 16.504 5.03 16.504C4.12 15.882 5.1 15.895 5.1 15.895C6.1 15.966 6.63 16.926 6.63 16.926C7.5 18.437 8.97 18 9.54 17.747C9.63 17.114 9.89 16.678 10.17 16.42C7.95 16.163 5.62 15.3 5.62 11.475C5.62 10.387 6.01 9.494 6.65 8.794C6.55 8.536 6.2 7.524 6.75 6.148C6.75 6.148 7.59 5.87 9.5 7.163C10.29 6.938 11.15 6.825 12 6.825C12.85 6.825 13.71 6.938 14.5 7.163C16.41 5.87 17.25 6.148 17.25 6.148C17.8 7.524 17.45 8.536 17.35 8.794C17.99 9.494 18.38 10.387 18.38 11.475C18.38 15.31 16.04 16.16 13.82 16.41C14.17 16.72 14.5 17.33 14.5 18.264V21.007C14.5 21.275 14.68 21.587 15.19 21.489C19.137 20.163 22 16.418 22 12C22 6.477 17.523 2 12 2Z" fill="currentColor"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>

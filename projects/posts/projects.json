@@ -3,9 +3,9 @@
     "slug": "finders",
     "title": "Finders",
     "summary": "현상소 통합 추천 서비스",
-    "description": " Finders는 필름 카메라 사용자가 현상소를 탐색하고, 예약하고, 결제까지 한 번에 처리할 수 있는 서비스입니다. AI 사진 복원, 커뮤니티 피드, 필름카메라 가이드 등 필름 생활 전반을 아우르는 기능을 제공합니다. ",
-    "period": "2026.01 ~ 2026.2",
-    "tags": ["React", "Spring Boot", "MySQL", "AWS EC2"],
+    "description": " Finders는 필름 카메라 사용자가 현상소를 탐색하고, 예약하고, 결제까지 한 번에 처리할 수 있는 서비스입니다. AI 사진 복원, 커뮤니티 피드, 필름카메라 가이드 등 필름 생활 전반을 아우르는 기능을 제공합니다. ",
+    "period": "2026.01 ~ 2026.02",
+    "tags": ["React", "TypeScript", "TailwindCSS", "React Query", "Zustand"],
     "thumbnail": "/projects/images/Finders.png",
     "link": "/projects/pages/project.html?slug=finders"
   },
@@ -15,7 +15,7 @@
     "summary": "시각장애인 요리 보조 서비스",
     "description": "웹캠으로 시각장애인의 요리 과정을 인식해 재료 상태와 위험 요소를 판단하고, 음성 피드백으로 안전한 요리를 돕는 요리 보조 서비스입니다.",
     "period": "2025.10 ~ 2025.12",
-    "tags": ["React", "Azure Speech API", "Spring Boot", "OpenCV"],
+    "tags": ["Spring Boot", "JPA", "MySQL", "Azure Speech API", "WebSocket", "AWS EC2", "GitHub Actions"],
     "thumbnail": "/projects/images/cookmate.png",
     "link": "/projects/pages/project.html?slug=cookmate"
   },
@@ -25,7 +25,7 @@
     "summary": "실패담 공유 커뮤니티",
     "description": "사용자가 자신의 실패 경험을 사진과 글로 공유하고, 공감과 조언을 주고받으며 경험을 기록하고 성장으로 이어가는 실패 공유 SNS 서비스입니다.",
     "period": "2025.07 ~ 2025.09",
-    "tags": ["React", "React Query", "Spring Boot"],
+    "tags": ["Spring Boot", "JPA", "MySQL"],
     "thumbnail": "/projects/images/oops.png",
     "link": "/projects/pages/project.html?slug=oops"
   },
@@ -35,7 +35,7 @@
     "summary": "AI 일기 생성 및 챗봇 서비스",
     "description": "AI와의 대화를 기반으로 일기를 생성하거나, 작성한 일기에 코멘트를 제공하는 인터랙티브 AI 일기 챗봇 서비스입니다.",
     "period": "2025.04 ~ 2025.05",
-    "tags": ["React", "Vercel", "Spring Boot", "OpenAI API"],
+    "tags": ["Spring Boot", "JPA", "MySQL", "OpenAI API", "Kakao OAuth", "OpenFeign", "JWT"],
     "thumbnail": "/projects/images/soulmate.jpg",
     "link": "/projects/pages/project.html?slug=soulmate"
   }

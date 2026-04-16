@@ -16,11 +16,13 @@ if (document.querySelector('.blog-card-container')) {
     return `
       <article class="blog-card" data-slug="${post.slug}">
         <img class="blog-card-thumbnail" src="${post.thumbnail}" alt="${post.title}" onerror="this.style.background='#e0e0e0'; this.style.display='block';">
+        <div class="blog-card-content_con">
         <div class="blog-card-content">
           <span class="blog-card-category">${post.category}</span>
           <h3 class="blog-card-title">${post.title}</h3>
           <p class="blog-card-description">${post.summary}</p>
-          <div class="blog-card-footer">
+        </div>
+        <div class="blog-card-footer">
             <div class="blog-card-tags">
               ${post.tags.map(tag => `<span class="blog-card-tag">${tag}</span>`).join('')}
             </div>

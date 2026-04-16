@@ -5,7 +5,10 @@
 .intro-container {
     display: flex;
     flex-direction: column;
-    padding: 320px 0;
+    justify-content: center;
+    min-height: calc(100vh - 85px);
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .profile-container {

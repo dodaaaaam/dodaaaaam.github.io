@@ -180,22 +180,96 @@ main {
     font-weight: 500;
 }
 
-.contact-menu {
-    list-style: none;
+.contact_btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    color: var(--color-nav-link);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.contact_btn:hover {
+    color: var(--color-nav-link-active);
+    font-weight: 500;
+}
+
+/* ========================= */
+/* Contact Modal             */
+/* ========================= */
+
+.contact-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-modal.active {
     display: flex;
-    gap: 12px;
-    margin: 0;
 }
 
-.contact-item {
-    width: 36px;
-    height: 36px;
-    display: block;
-    fill: var(--color-nav-link);
-    transition: fill 0.2s ease, transform 0.2s ease;
+.contact-modal-content {
+    background-color: var(--color-bg);
+    border-radius: 16px;
+    padding: 40px;
+    width: 360px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
-.contact-item:hover {
-    fill: var(--color-black);
-    transform: scale(1.03);
+.contact-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.15s ease;
+}
+
+.contact-modal-close:hover {
+    color: var(--color-text-primary);
+}
+
+.contact-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 24px 0;
+}
+
+.contact-modal-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contact-modal-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-bg-white);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.contact-modal-circle:hover {
+    background-color: var(--color-brand);
+    color: var(--color-bg-white);
+    transform: scale(1.1);
 }
