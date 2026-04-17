@@ -92,7 +92,7 @@ body {
 main {
     max-width: 1400px;
     margin: 100px auto 0;
-    padding: 0;
+    padding: 0 40px;
 }
 
 .block {

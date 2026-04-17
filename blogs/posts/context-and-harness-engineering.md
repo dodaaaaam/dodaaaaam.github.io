@@ -1,4 +1,4 @@
-## 서론
+# 서론
 
 2024~2025년을 거치며 "프롬프트 엔지니어링"이라는 용어가 개발자 사이에서 일상어가 되었다. 하지만 실무에서 LLM을 활용한 시스템을 구축하다 보면, 단순히 프롬프트를 잘 쓰는 것만으로는 한계가 분명하다는 걸 느끼게 된다.
 
@@ -9,7 +9,7 @@
 
 이 글에서는 프롬프트 엔지니어링과의 차이점을 시작으로, 두 개념이 왜 등장했고, 실제로 어떻게 적용할 수 있는지 정리해본다.
 
-## 프롬프트 엔지니어링의 한계
+# 프롬프트 엔지니어링의 한계
 
 프롬프트 엔지니어링은 **모델에게 보내는 텍스트를 최적화**하는 데 초점을 둔다.
 
@@ -27,13 +27,13 @@
 
 프롬프트 한 줄을 다듬는 것으로는 이 복잡성을 감당할 수 없다. 여기서 Context Engineering이 시작된다.
 
-## Context Engineering이란
+# Context Engineering이란
 
 > 모델이 올바른 판단을 내릴 수 있도록, **입력으로 들어가는 전체 맥락을 체계적으로 설계**하는 것
 
 프롬프트 엔지니어링이 "무엇을 말할까"에 집중한다면, Context Engineering은 "모델이 판단에 필요한 **모든 정보를 어떻게 구성할까**"에 집중한다.
 
-### 맥락의 구성 요소
+## 맥락의 구성 요소
 
 모델에게 전달되는 맥락은 단순한 프롬프트가 아니라, 여러 레이어로 구성된다:
 
@@ -45,7 +45,7 @@
 | Retrieved Context | 외부에서 검색/조회한 정보 | RAG로 가져온 문서, DB 조회 결과 |
 | Conversation History | 이전 대화 기록 | 멀티턴 대화에서의 이전 질의/응답 |
 
-### 핵심 원칙
+## 핵심 원칙
 
 **1. 필요한 정보만, 적절한 시점에**
 
@@ -102,13 +102,13 @@ async function getContextForFile(filePath) {
 }
 ```
 
-## Harness Engineering이란
+# Harness Engineering이란
 
 > AI 모델을 **시스템의 한 컴포넌트로 통합**하고, 입력/출력/오류 처리/워크플로우를 설계하는 것
 
 Context Engineering이 "모델에게 뭘 보여줄까"라면, Harness Engineering은 "모델을 **어떻게 시스템에 끼워넣을까**"다.
 
-### 모델은 함수다
+## 모델은 함수다
 
 Harness Engineering의 핵심 사고방식은 LLM을 하나의 **함수**로 보는 것이다:
 
@@ -147,7 +147,7 @@ async function reviewPullRequest(prData) {
 }
 ```
 
-### Harness의 구성 요소
+## Harness의 구성 요소
 
 **1. Input Pipeline** — 모델에 보낼 입력을 가공
 
@@ -208,7 +208,7 @@ async function analyzeCodebase(repo) {
 }
 ```
 
-## Context Engineering vs Harness Engineering
+# Context Engineering vs Harness Engineering
 
 두 개념은 대립하는 것이 아니라, **같은 시스템의 다른 레이어**다.
 
@@ -221,11 +221,11 @@ async function analyzeCodebase(repo) {
 
 실제 프로덕트에서는 둘 다 필요하다. Harness가 파이프라인을 설계하고, 그 안에서 Context Engineering이 각 단계의 입력을 최적화한다.
 
-## 프론트엔드 개발자 관점에서의 적용
+# 프론트엔드 개발자 관점에서의 적용
 
 AI 기능을 프론트엔드에 통합할 때도 이 개념들이 적용된다.
 
-### 사용자 입력을 맥락으로 변환
+## 사용자 입력을 맥락으로 변환
 
 사용자가 입력한 자연어를 그대로 모델에 보내지 않고, 현재 UI 상태와 함께 구성한다:
 
@@ -248,7 +248,7 @@ async function handleUserQuery(query) {
 }
 ```
 
-### 스트리밍 응답 처리
+## 스트리밍 응답 처리
 
 모델의 출력을 실시간으로 UI에 반영하는 것도 Harness의 영역이다:
 
@@ -275,7 +275,7 @@ async function streamAIResponse(prompt) {
 }
 ```
 
-### 에러 상태의 UX 설계
+## 에러 상태의 UX 설계
 
 모델이 실패하거나 부적절한 응답을 반환했을 때의 사용자 경험도 Harness의 일부다:
 
@@ -303,7 +303,7 @@ async function safeAICall(prompt) {
 }
 ```
 
-## 결론
+# 결론
 
 프롬프트 엔지니어링은 여전히 중요하다. 하지만 AI를 실제 프로덕트에 통합할 때는 그것만으로는 부족하다.
 
@@ -314,7 +314,7 @@ async function safeAICall(prompt) {
 
 AI 시대에 개발자의 역할은 "코드를 짜는 사람"에서 "시스템을 설계하는 사람"으로 확장되고 있다. Context Engineering과 Harness Engineering은 그 확장의 구체적인 방향을 보여준다.
 
-## 참고 자료
+# 참고 자료
 
 - [Andrej Karpathy의 Context Engineering 관련 발언](https://x.com/karpathy)
 - [LangChain Documentation — Building with LLMs](https://docs.langchain.com)

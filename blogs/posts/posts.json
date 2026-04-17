@@ -32,7 +32,7 @@
     "date": "2026-04-02",
     "category": "CS",
     "tags": ["네트워크", "DNS", "HTTP", "브라우저"],
-    "thumbnail": "/blogs/images/what-happens-when-you-type-url.jpg",
+    "thumbnail": "/assets/img/bg.jpg",
     "summary": "브라우저 주소창에 URL을 입력하고 엔터를 누른 순간부터 화면이 렌더링되기까지의 전체 과정을 단계별로 파헤칩니다."
   },
   {
@@ -49,8 +49,8 @@
     "title": "Context Engineering과 Harness Engineering, AI 시대의 새로운 개발 패러다임",
     "date": "2026-04-16",
     "category": "AI",
-    "tags": ["LLM", "Context Engineering", "Harness Engineering", "프롬프트"],
+    "tags": ["LLM", "Context Engineering", "Harness Engineering"],
     "thumbnail": "/blogs/images/context-and-harness-engineering.jpg",
-    "summary": "프롬프트 엔지니어링을 넘어, AI 모델에게 올바른 맥락을 설계하는 Context Engineering과 AI를 시스템으로 통합하는 Harness Engineering의 개념과 실전 적용법을 정리합니다."
+    "summary": "AI에 맥락을 설계하는 Context Engineering과 시스템으로 통합하는 Harness Engineering을 정리합니다."
   }
 ]
