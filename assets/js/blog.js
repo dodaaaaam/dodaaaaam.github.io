@@ -1,12 +1,6 @@
 // blogs.html 전용 — 요소가 없으면 실행하지 않음
 if (document.querySelector('.blog-card-container')) {
 
-  const CATEGORY_SUBS = {
-    "Problem Solving": ["Solvings", "Patterns & Data Structures"],
-    "Development": ["Frontend", "Backend", "DevOps"],
-    "Computer Science": ["OS", "Network", "DB"]
-  };
-
   let allPosts = [];
   let currentCategory = 'all';
   let currentSearch = '';
@@ -39,14 +33,6 @@ if (document.querySelector('.blog-card-container')) {
     `;
   }
 
-  // 현재 카테고리가 post에 매칭되는지 판정
-  function matchCategory(post) {
-    if (currentCategory === 'all') return true;
-    if (post.category === currentCategory) return true;
-    const subs = CATEGORY_SUBS[currentCategory];
-    return subs ? subs.includes(post.category) : false;
-  }
-
   // 필터링 + 렌더링
   function renderCards() {
     const container = document.querySelector('.blog-card-container');
@@ -56,7 +42,7 @@ if (document.querySelector('.blog-card-container')) {
         const matchSearch = !query ||
           post.title.toLowerCase().includes(query) ||
           post.summary.toLowerCase().includes(query);
-        return matchCategory(post) && matchSearch;
+        return Categories.matches(post, currentCategory) && matchSearch;
       })
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -86,7 +72,7 @@ if (document.querySelector('.blog-card-container')) {
   function renderSubcategories() {
     const section = document.querySelector('.blog-subfilter-container');
     const filter = section.querySelector('.subcategory-filter');
-    const subs = CATEGORY_SUBS[currentCategory];
+    const subs = Categories.subsOf(currentCategory);
     if (!subs) {
       section.hidden = true;
       filter.innerHTML = '';
@@ -127,13 +113,14 @@ if (document.querySelector('.blog-card-container')) {
     if (e.key === 'Enter') doSearch();
   });
 
-  // 초기 로드
-  fetch('/blogs/posts/posts.json')
-    .then(res => res.json())
-    .then(posts => {
-      allPosts = posts;
-      activateCategoryButton();
-      renderSubcategories();
-      renderCards();
-    });
+  // 초기 로드 — 카테고리 먼저, 그 다음 포스트
+  Promise.all([
+    Categories.load(),
+    fetch('/blogs/posts/posts.json').then(res => res.json())
+  ]).then(([, posts]) => {
+    allPosts = posts;
+    activateCategoryButton();
+    renderSubcategories();
+    renderCards();
+  });
 }

@@ -1,1 +1,8 @@
-["Problem Solving", "Development", "Computer Science", "AI", "Trouble Shooting", "Dev Log"]
+[
+  { "name": "Problem Solving", "subs": ["Solvings", "Patterns & Data Structures"] },
+  { "name": "Development", "subs": ["Frontend", "Backend", "DevOps"] },
+  { "name": "Computer Science", "subs": ["OS", "Network", "DB"] },
+  { "name": "AI" },
+  { "name": "Trouble Shooting" },
+  { "name": "Dev Log" }
+]

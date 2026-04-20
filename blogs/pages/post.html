@@ -21,7 +21,7 @@
             <div class="sidebar-section">
                 <div class="sidebar-title-category">
                     <h3 class="sidebar-title" style="border-bottom: none;">카테고리</h3>
-                    <a href="/blogs/pages/blogs.html" class="post-back">&larr; 목록으로</a>
+                    <a href="/blogs/pages/blogs.html" class="post-back">&larr;&nbsp;&nbsp; 목록으로</a>
                 </div>
                 <ul class="sidebar-categories"></ul>
             </div>
@@ -58,6 +58,7 @@
     </main>
 
     <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/categories.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
@@ -75,7 +76,7 @@
         // 메타데이터 로드
         Promise.all([
             fetch('/blogs/posts/posts.json').then(res => res.json()),
-            fetch('/blogs/posts/categories.json').then(res => res.json())
+            Categories.load()
         ])
             .then(([posts, categories]) => {
                 const post = posts.find(p => p.slug === slug);
@@ -84,7 +85,9 @@
                     return;
                 }
                 document.querySelector('.post-title').textContent = post.title;
-                document.querySelector('.post-category').textContent = post.category;
+                const parentCat = Categories.parentOf(post.category);
+                document.querySelector('.post-category').textContent =
+                    parentCat ? `${parentCat}\u00A0\u00A0\u00A0»\u00A0\u00A0\u00A0${post.category}` : post.category;
                 document.querySelector('.post-date').textContent = post.date;
 
 
@@ -99,9 +102,12 @@
                 document.querySelector('.post-tags').innerHTML =
                     post.tags.map(t => `<span class="blog-card-tag">${t}</span>`).join('');
 
-                // 사이드바: 카테고리 목록
+                // 사이드바: 카테고리 목록 — 현재 글의 카테고리가 parent 본인이거나 parent의 sub 중 하나면 active
                 document.querySelector('.sidebar-categories').innerHTML = categories
-                    .map(cat => `<li><a class="category-tag ${cat === post.category ? 'active' : ''}" href="/blogs/pages/blogs.html?category=${encodeURIComponent(cat)}">${cat}</a></li>`)
+                    .map(cat => {
+                        const isActive = Categories.matches(post, cat.name);
+                        return `<li><a class="category-tag ${isActive ? 'active' : ''}" href="/blogs/pages/blogs.html?category=${encodeURIComponent(cat.name)}">${cat.name}</a></li>`;
+                    })
                     .join('');
 
                 // 사이드바: 최신 글 5개
