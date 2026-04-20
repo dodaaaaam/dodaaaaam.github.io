@@ -10,28 +10,36 @@
         <h2 class="title">Blogs</h2>
         <!-- 카테고리 선택 및 검색 영역 -->
         <section class="blog-filter-container">
-            <div class="category-filter">
-                <button class="category-button active" data-category="all">All</button>
-                <button class="category-button" data-category="Problem Solving">Problem Solving</button>
-                <button class="category-button" data-category="Development">Development</button>
-                <button class="category-button" data-category="Computer Science">Computer Science</button>
-                <button class="category-button" data-category="AI">AI</button>
-                <button class="category-button" data-category="Trouble Shooting">Trouble Shooting</button>
-                <button class="category-button" data-category="Dev Log">Dev Log</button>
-            </div>
-            <div class="search-container">
-                <input type="text" id="search-input" placeholder="검색어를 입력하세요.">
-                <button id="search-button">
-                    <img src="/assets/img/search.svg" alt="검색" class="search-icon">
-                </button>
+            <div class="blog-mainfilter-container">
+                <h2 class="category-title">Categories</h2>
+                <div class="category-filter">
+                    <button class="category-button active" data-category="all">All</button>
+                    <button class="category-button" data-category="Problem Solving">Problem Solving</button>
+                    <button class="category-button" data-category="Development">Development</button>
+                    <button class="category-button" data-category="Computer Science">Computer Science</button>
+                    <button class="category-button" data-category="AI">AI</button>
+                    <button class="category-button" data-category="Trouble Shooting">Trouble Shooting</button>
+                    <button class="category-button" data-category="Dev Log">Dev Log</button>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="검색어를 입력하세요.">
+                    <button id="search-button">
+                        <img src="/assets/img/search.svg" alt="검색" class="search-icon">
+                    </button>
+                </div>
             </div>
 
+            <!-- 서브 카테고리 영역 (해당 parent에 subs가 있을 때만 표시) -->
+            <section class="blog-subfilter-container" hidden>
+                <h2 class="category-title">SubCategories</h2>
+                <div class="category-filter subcategory-filter"></div>
+            </section>
         </section>
 
         <!-- 블로그 카드 영역 -->
         <section class="blog-card-container">
 
-        </section>      
+        </section>
     </main>
     <script src="/assets/js/common.js"></script>
     <script src="/assets/js/blog.js"></script>

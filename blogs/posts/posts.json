@@ -3,7 +3,7 @@
     "slug": "ps-hide-cacti",
     "title": "«선인장 숨기기» 시간초과 문제해결 과정",
     "date": "2026-04-18",
-    "category": "Problem Solving",
+    "category": "Solvings",
     "tags": ["프로그래머스", "시간초과", "Lv2"],
     "thumbnail": "/blogs/images/cacti.jpg",
     "summary": "«선인장 숨기기»를 풀며 겪은 세 번의 시간초과와, '빗방울 중심'에서 '구역의 최소값 중심'으로 관점을 바꾸어 해결한 과정을 기록합니다."
@@ -12,7 +12,7 @@
     "slug": "cs-type-url",
     "title": "브라우저에 URL을 입력하면 무슨 일이 일어날까",
     "date": "2026-04-02",
-    "category": "Computer Science",
+    "category": "Network",
     "tags": ["네트워크", "DNS", "HTTP", "브라우저"],
     "thumbnail": "/blogs/images/what-happens-when-you-type-url.png",
     "summary": "브라우저 주소창에 URL을 입력하고 엔터를 누른 순간부터 화면이 렌더링되기까지의 전체 과정을 단계별로 파헤칩니다."
