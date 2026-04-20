@@ -14,19 +14,9 @@
 
     <div class="post-hero">
         <img class="post-thumbnail" alt="" />
-        <div class="post-header-container">
-            <div class="post-title-container">
-                <div class="post-meta">
-                    <span class="post-category"></span>
-                    <span class="post-date"></span>
-                </div>
-                <h1 class="post-title"></h1>
-                <div class="post-tags"></div>
-            </div>
-        </div>
     </div>
 
-    <main class="post-main" style="margin: 20px auto 0;">
+    <main class="post-main">
         <aside class="post-sidebar">
             <div class="sidebar-section">
                 <div class="sidebar-title-category">
@@ -41,6 +31,16 @@
             </div>
         </aside>
         <article class="post-container">
+            <div class="post-header-container">
+                <div class="post-title-container">
+                    <div class="post-meta">
+                        <span class="post-category"></span>
+                        <span class="post-date"></span>
+                    </div>
+                    <h1 class="post-title"></h1>
+                    <div class="post-tags"></div>
+                </div>
+            </div>
             <aside class="floating-nav-wrapper">
                 <div class="floating-nav" id="floatingNav">
                     <button class="floating-nav-toggle" type="button"
@@ -73,9 +73,11 @@
         });
 
         // 메타데이터 로드
-        fetch('/blogs/posts/posts.json')
-            .then(res => res.json())
-            .then(posts => {
+        Promise.all([
+            fetch('/blogs/posts/posts.json').then(res => res.json()),
+            fetch('/blogs/posts/categories.json').then(res => res.json())
+        ])
+            .then(([posts, categories]) => {
                 const post = posts.find(p => p.slug === slug);
                 if (!post) {
                     document.querySelector('.post-body').innerHTML = '<p>글을 찾을 수 없습니다.</p>';
@@ -98,9 +100,8 @@
                     post.tags.map(t => `<span class="blog-card-tag">${t}</span>`).join('');
 
                 // 사이드바: 카테고리 목록
-                const categories = [...new Set(posts.map(p => p.category))];
                 document.querySelector('.sidebar-categories').innerHTML = categories
-                    .map(cat => `<li><a class="sidebar-link" href="/blogs/pages/blogs.html?category=${encodeURIComponent(cat)}">${cat}</a></li>`)
+                    .map(cat => `<li><a class="category-tag ${cat === post.category ? 'active' : ''}" href="/blogs/pages/blogs.html?category=${encodeURIComponent(cat)}">${cat}</a></li>`)
                     .join('');
 
                 // 사이드바: 최신 글 5개
@@ -138,7 +139,7 @@
                 });
             })
             .catch(() => {
-                document.querySelector('.post-body').innerHTML = '<p>글 내용을 불러올 수 없습니다.</p>';
+                document.querySelector('.post-body').innerHTML = '<p style="margin-top: 36px;">글 내용을 불러올 수 없습니다.</p>';
             });
     </script>
 </body>

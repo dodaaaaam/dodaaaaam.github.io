@@ -1,56 +1,37 @@
 [
   {
-    "slug": "css-grid-vs-flexbox",
-    "title": "CSS Grid vs Flexbox, 언제 무엇을 써야 할까",
-    "date": "2026-03-15",
-    "category": "Frontend",
-    "tags": ["CSS", "Grid", "Flexbox", "레이아웃"],
-    "thumbnail": "/blogs/images/css-grid-vs-flexbox.jpg",
-    "summary": "CSS Grid와 Flexbox의 차이점을 비교하고, 실제 프로젝트에서 어떤 상황에 어떤 것을 선택해야 하는지 정리했습니다."
+    "slug": "ps-hide-cacti",
+    "title": "«선인장 숨기기» 시간초과 문제해결 과정",
+    "date": "2026-04-18",
+    "category": "Problem Solving",
+    "tags": ["프로그래머스", "시간초과", "Lv2"],
+    "thumbnail": "/blogs/images/cacti.jpg",
+    "summary": "«선인장 숨기기»를 풀며 겪은 세 번의 시간초과와, '빗방울 중심'에서 '구역의 최소값 중심'으로 관점을 바꾸어 해결한 과정을 기록합니다."
   },
   {
-    "slug": "rest-api-common-mistakes",
-    "title": "REST API 설계 시 흔히 하는 실수 5가지",
-    "date": "2026-03-22",
-    "category": "Backend",
-    "tags": ["REST", "API", "설계", "Spring Boot"],
-    "thumbnail": "/blogs/images/rest-api-common-mistakes.jpg",
-    "summary": "REST API를 설계할 때 자주 발생하는 실수들과 올바른 설계 원칙을 실제 코드 예시와 함께 알아봅니다."
-  },
-  {
-    "slug": "cors-error-guide",
-    "title": "CORS 에러 완전 정복 가이드",
-    "date": "2026-03-29",
-    "category": "Trouble Shooting",
-    "tags": ["CORS", "HTTP", "보안", "트러블슈팅"],
-    "thumbnail": "/blogs/images/cors-error-guide.jpg",
-    "summary": "프론트엔드 개발에서 가장 자주 만나는 CORS 에러의 원인과 해결 방법을 상황별로 정리했습니다."
-  },
-  {
-    "slug": "what-happens-when-you-type-url",
+    "slug": "cs-type-url",
     "title": "브라우저에 URL을 입력하면 무슨 일이 일어날까",
     "date": "2026-04-02",
-    "category": "CS",
+    "category": "Computer Science",
     "tags": ["네트워크", "DNS", "HTTP", "브라우저"],
-    "thumbnail": "/assets/img/bg.jpg",
+    "thumbnail": "/blogs/images/what-happens-when-you-type-url.png",
     "summary": "브라우저 주소창에 URL을 입력하고 엔터를 누른 순간부터 화면이 렌더링되기까지의 전체 과정을 단계별로 파헤칩니다."
   },
   {
-    "slug": "adding-blog-to-portfolio",
+    "slug": "dl-adding-blog",
     "title": "포트폴리오 사이트에 블로그 기능 추가하기",
     "date": "2026-04-07",
     "category": "Dev Log",
     "tags": ["포트폴리오", "블로그", "JavaScript", "마크다운"],
-    "thumbnail": "/blogs/images/adding-blog-to-portfolio.jpg",
     "summary": "백엔드 없이 순수 HTML/CSS/JS만으로 마크다운 기반 블로그 시스템을 구축한 과정을 기록합니다."
   },
   {
     "slug": "context-and-harness-engineering",
-    "title": "Context Engineering과 Harness Engineering, AI 시대의 새로운 개발 패러다임",
+    "title": "AI 시대의 새로운 개발 패러다임 « Context vs Harness »",
     "date": "2026-04-16",
     "category": "AI",
     "tags": ["LLM", "Context Engineering", "Harness Engineering"],
-    "thumbnail": "/blogs/images/context-and-harness-engineering.jpg",
+    "thumbnail": "/blogs/images/ai.webp",
     "summary": "AI에 맥락을 설계하는 Context Engineering과 시스템으로 통합하는 Harness Engineering을 정리합니다."
   }
 ]

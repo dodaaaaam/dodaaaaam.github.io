@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="/assets/css/common.css">
     <link rel="stylesheet" href="/assets/css/project.css">
     <link rel="stylesheet" href="/assets/css/post.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 
 <body>
@@ -21,13 +22,14 @@
 
         <div class="project-detail">
             <div class="project-header-container">
-                <div class="project-detail-header">
+                <div class="project-meta">
                     <span class="project-detail-period"></span>
-                    <h1 class="project-detail-title"></h1>
-                    <p class="project-detail-summary"></p>
-                    <div class="project-detail-tags"></div>
+                    <a href="/projects/projects.html" class="project-detail-back">&larr; 프로젝트 목록</a>
                 </div>
-            <a href="/projects/projects.html" class="project-detail-back">&larr; 프로젝트 목록</a>
+                <h1 class="project-detail-title"></h1>
+                <p class="project-detail-summary"></p>
+                <p class="project-detail-description"></p>
+                <div class="project-detail-tags"></div>
             </div>
             <div class="project-detail-body"></div>
         </div>
@@ -59,7 +61,8 @@
                 }
                 document.querySelector('.project-detail-title').textContent = project.title;
                 document.querySelector('.project-detail-period').textContent = project.period;
-                document.querySelector('.project-detail-summary').textContent = project.summary + ' — ' + project.description;
+                document.querySelector('.project-detail-summary').textContent = project.summary;
+                document.querySelector('.project-detail-description').textContent = project.description;
                 document.querySelector('.project-detail-tags').innerHTML =
                     project.tags.map(t => `<span class="project-card-tag">${t}</span>`).join('');
 

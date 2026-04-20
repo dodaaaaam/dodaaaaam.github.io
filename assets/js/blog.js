@@ -15,7 +15,7 @@ if (document.querySelector('.blog-card-container')) {
   function createCardHTML(post) {
     return `
       <article class="blog-card" data-slug="${post.slug}">
-        <img class="blog-card-thumbnail" src="${post.thumbnail}" alt="${post.title}" onerror="this.style.background='#e0e0e0'; this.style.display='block';">
+        <img class="blog-card-thumbnail" src="${post.thumbnail || '/blogs/images/bg.png'}" alt="${post.title}" onerror="this.style.background='#e0e0e0'; this.style.display='block';">
         <div class="blog-card-content_con">
         <div class="blog-card-content">
           <span class="blog-card-category">${post.category}</span>
