@@ -64,5 +64,19 @@
     ],
     "thumbnail": "/blogs/images/coding.png",
     "summary": "Union-Find의 핵심 개념과 Union/Find 연산, 경로 압축과 Rank 기반 최적화까지 정리하고, 실제 코딩 테스트에서 언제 사용해야 하는지와 사용하지 말아야 하는 상황까지 함께 정리한다."
-  }
+  },
+  {
+  "slug": "ps-max-leaf-node",
+  "title": "«리프 노드 수 최대화» 아이디어 도출 과정",
+  "date": "2026-04-21",
+  "category": "Solvings",
+  "tags": [
+    "Deque",
+    "BFS",
+    "DP",
+    "State Compression"
+  ],
+  "thumbnail": "/blogs/images/coding.png",
+  "summary": "트리를 직접 구성하려다 막힌 뒤, 상태를 리프 개수로 압축하고 '완전 확장 + 부분 확장'으로 관점을 바꾸어 해결한 과정을 기록합니다."
+}
 ]
