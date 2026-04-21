@@ -2,6 +2,18 @@
 /* Detail Page Layout         */
 /* ========================= */
 
+.post-body .check-mark,
+.project-detail-body .check-mark {
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.post-body .arrow-return,
+.project-detail-body .arrow-return {
+    display: inline-block;
+    margin-right: 8px;
+}
+
 .post-hero {
     margin-top: 80px;
     position: relative;
@@ -349,6 +361,13 @@
     margin: 36px 0 16px;
 }
 
+.post-body h2 .h2-text::before,
+.project-detail-body h2 .h2-text::before {
+    content: "▶︎";
+    margin-right: 12px;
+    margin-left: 0;
+}
+
 .post-body h3,
 .project-detail-body h3 {
     font-size: 22px;
@@ -471,8 +490,15 @@
 
 .post-body strong,
 .project-detail-body strong {
+    font-weight: 800;
+    color: var(--color-highlight);
+}
+
+.post-body em,
+.project-detail-body em {
+    font-style: normal;     /* 기본 이탤릭 끄기 */
+    color: var(--color-accent);
     font-weight: 600;
-    color: var(--color-text-primary);
 }
 
 /* 마크다운 표 */

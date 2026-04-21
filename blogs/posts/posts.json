@@ -4,7 +4,11 @@
     "title": "«선인장 숨기기» 시간초과 문제해결 과정",
     "date": "2026-04-18",
     "category": "Solvings",
-    "tags": ["프로그래머스", "시간초과", "Lv2"],
+    "tags": [
+      "프로그래머스",
+      "시간초과",
+      "Lv2"
+    ],
     "thumbnail": "/blogs/images/cacti.jpg",
     "summary": "«선인장 숨기기»를 풀며 겪은 세 번의 시간초과와, '빗방울 중심'에서 '구역의 최소값 중심'으로 관점을 바꾸어 해결한 과정을 기록합니다."
   },
@@ -13,7 +17,12 @@
     "title": "브라우저에 URL을 입력하면 무슨 일이 일어날까",
     "date": "2026-04-02",
     "category": "Network",
-    "tags": ["네트워크", "DNS", "HTTP", "브라우저"],
+    "tags": [
+      "네트워크",
+      "DNS",
+      "HTTP",
+      "브라우저"
+    ],
     "thumbnail": "/blogs/images/what-happens-when-you-type-url.png",
     "summary": "브라우저 주소창에 URL을 입력하고 엔터를 누른 순간부터 화면이 렌더링되기까지의 전체 과정을 단계별로 파헤칩니다."
   },
@@ -22,16 +31,38 @@
     "title": "포트폴리오 사이트에 블로그 기능 추가하기",
     "date": "2026-04-07",
     "category": "Dev Log",
-    "tags": ["포트폴리오", "블로그", "JavaScript", "마크다운"],
+    "tags": [
+      "포트폴리오",
+      "블로그",
+      "JavaScript",
+      "마크다운"
+    ],
     "summary": "백엔드 없이 순수 HTML/CSS/JS만으로 마크다운 기반 블로그 시스템을 구축한 과정을 기록합니다."
   },
   {
-    "slug": "context-and-harness-engineering",
+    "slug": "ai-context-and-harness",
     "title": "AI 시대의 새로운 개발 패러다임 « Context vs Harness »",
     "date": "2026-04-16",
     "category": "AI",
-    "tags": ["LLM", "Context Engineering", "Harness Engineering"],
+    "tags": [
+      "LLM",
+      "Context Engineering",
+      "Harness Engineering"
+    ],
     "thumbnail": "/blogs/images/ai.webp",
     "summary": "AI에 맥락을 설계하는 Context Engineering과 시스템으로 통합하는 Harness Engineering을 정리합니다."
+  },
+  {
+    "slug": "pd-union-find",
+    "title": "Union-Find (Disjoint Set), 언제 쓰고 어떻게 사용하는가",
+    "date": "2026-04-21",
+    "category": "Patterns & Data Structures",
+    "tags": [
+      "Union-Find",
+      "Graph",
+      "Kruskal"
+    ],
+    "thumbnail": "/blogs/images/coding.png",
+    "summary": "Union-Find의 핵심 개념과 Union/Find 연산, 경로 압축과 Rank 기반 최적화까지 정리하고, 실제 코딩 테스트에서 언제 사용해야 하는지와 사용하지 말아야 하는 상황까지 함께 정리한다."
   }
 ]
