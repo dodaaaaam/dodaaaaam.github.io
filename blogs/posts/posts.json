@@ -66,17 +66,62 @@
     "summary": "Union-Find의 핵심 개념과 Union/Find 연산, 경로 압축과 Rank 기반 최적화까지 정리하고, 실제 코딩 테스트에서 언제 사용해야 하는지와 사용하지 말아야 하는 상황까지 함께 정리한다."
   },
   {
-  "slug": "ps-max-leaf-node",
-  "title": "«리프 노드 수 최대화» 아이디어 도출 과정",
-  "date": "2026-04-21",
-  "category": "Solvings",
+    "slug": "ps-max-leaf-node",
+    "title": "«리프 노드 수 최대화» 아이디어 도출 과정",
+    "date": "2026-04-21",
+    "category": "Solvings",
+    "tags": [
+      "Deque",
+      "BFS",
+      "DP",
+      "State Compression"
+    ],
+    "thumbnail": "/blogs/images/leaf.jpg",
+    "summary": "트리를 직접 구성하려다 막힌 뒤, 상태를 리프 개수로 압축하고 '완전 확장 + 부분 확장'으로 관점을 바꾸어 해결한 과정을 기록합니다."
+  },
+  {
+    "slug": "ts-event-namespace",
+    "title": "jQuery 이벤트 네임스페이스(.gnbHover) 완전 이해하기 — 실무에서 왜 쓰는가",
+    "date": "2026-04-23",
+    "category": "Trouble Shooting",
+    "tags": [
+      "jQuery",
+      "Event Namespace",
+      "Event Handling",
+      "Reflow"
+    ],
+    "thumbnail": "/blogs/images/leaf.jpg",
+    "summary": "jQuery의 이벤트 네임스페이스(.gnbHover)가 무엇인지부터, 왜 실무에서 반드시 필요한지까지 실제 GNB hover 메뉴 코드를 통해 설명합니다. 이벤트 중복, 반응형 전환 시 발생하는 문제를 어떻게 해결하는지와 함께 이벤트 관리, 위치 계산, reflow 개념까지 한 번에 정리합니다."
+  },
+  {
+    "slug": "ts-radio-toggle-debug",
+    "title": "라디오 버튼을 재클릭으로 해제하기 — 초기화 타이밍이라는 함정",
+    "date": "2026-04-24",
+    "category": "Trouble Shooting",
+    "tags": [
+      "Event",
+      "Radio Button",
+      "MutationObserver",
+      "Timing",
+      "Race Condition",
+      "mousedown",
+      "DOM"
+    ],
+    "thumbnail": "/blogs/images/leaf.jpg",
+    "summary": "이미 선택된 라디오를 한 번 누르면 해제되지 않고 두 번 눌러야 되는 현상을 추적한 과정. `lastChecked` 맵으로 상태를 관리하는 첫 번째 접근은 프레임워크의 비동기 렌더와 경쟁하면서 실패했고, 결국 `mousedown`으로 클릭 직전 상태를 포착해 해결했다. '초기화 시점 상태 스캔'이 얼마나 위험한지, 그리고 이벤트의 전/후 타이밍을 활용하는 방법을 정리했다."
+  },
+  {
+  "slug": "ts-file-id-hidden-debug",
+  "title": "수정하면 다른 파일이 사라진다 — 사라진 hidden input 한 줄",
+  "date": "2026-04-24",
+  "category": "Trouble Shooting",
   "tags": [
-    "Deque",
-    "BFS",
-    "DP",
-    "State Compression"
+    "HTML",
+    "Form",
+    "Hidden Input",
+    "File Upload"
   ],
-  "thumbnail": "/blogs/images/coding.png",
-  "summary": "트리를 직접 구성하려다 막힌 뒤, 상태를 리프 개수로 압축하고 '완전 확장 + 부분 확장'으로 관점을 바꾸어 해결한 과정을 기록합니다."
+  "thumbnail": "/blogs/images/leaf.jpg",
+  "summary": "파일 두 개를 받는 폼에서 한쪽만 수정하면 다른 쪽이 조용히 사라지는 버그를 추적한 기록. 여러 가설(프레임워크 자동 삭제, autoFilterByColumn 덮어쓰기 등)은 모두 빗나갔고, 응답 JSON에 debug 필드를 실어 추적한 끝에 webadm 쪽 merge.php에 file_id hidden input 한 줄이 누락되어 있다는 걸 발견했다. HTML에 담겨 있는 것만 서버로 전달된다는 기본 원리, hidden input의 역할, 그리고 PHP 디버깅 시 error_log보다 응답 debug 필드가 더 빠를 수 있다는 걸 배웠다."
 }
 ]
